@@ -6,12 +6,11 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/09 14:20:12 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/06/23 15:51:31 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/21 12:26:54 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static int	counter(char const *s, char c)
 {

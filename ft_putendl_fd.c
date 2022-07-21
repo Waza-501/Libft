@@ -6,11 +6,10 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 14:37:06 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/06/28 14:55:30 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/21 12:26:42 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)

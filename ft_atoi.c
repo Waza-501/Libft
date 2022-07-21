@@ -6,14 +6,11 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/17 17:45:42 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/06/13 12:43:16 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/21 12:16:30 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 
 int	ft_atoi(const char *str)
 {
@@ -41,17 +38,3 @@ int	ft_atoi(const char *str)
 	}
 	return (res * sign);
 }
-
-// int main(int ac, char **av)
-// {
-// 	int mine;
-// 	int original;
-// 	if (ac == 2)
-// 	{
-// 		mine = ft_atoi(av[1]);
-// 		original = atoi(av[1]);
-// 		printf("mine: %d | original: %d\n", mine, original);
-// 	}
-
-// 	return(0);
-// }

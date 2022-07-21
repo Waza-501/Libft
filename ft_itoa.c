@@ -6,12 +6,11 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/09 14:20:44 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/06/17 12:40:34 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/21 12:25:35 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static int	is_negative(int n, int i, char *ret)
 {

@@ -6,11 +6,10 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 17:38:47 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/06/29 17:37:46 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/21 12:26:13 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 t_list	*ft_lstnew(void *content)
