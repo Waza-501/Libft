@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/11 19:18:57 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/06/28 16:31:18 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/22 14:26:13 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ size_t	ft_strlen(const	char *s)
 
 	tally = 0;
 	while (s[tally] != '\0')
-	{
 		tally++;
-	}
 	return (tally);
 }

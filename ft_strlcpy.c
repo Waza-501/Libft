@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/10 15:21:32 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/05/18 13:41:35 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/22 14:26:06 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 	tally = (size_t)ft_strlen (src);
 	if (dstsize == 0)
-	{
 		return (tally);
-	}
 	while (*src && dstsize - 1 > 0)
 	{
 		*dst++ = *src++;

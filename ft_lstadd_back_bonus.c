@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 18:23:36 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/01 18:54:34 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/22 14:18:48 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,5 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	if (!*lst)
 		*lst = new;
 	else
-	{
 		ft_lstlast(*lst)->next = new;
-	}	
 }

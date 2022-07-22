@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/06 15:24:33 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/06/28 16:30:13 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/22 14:25:20 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ char	*ft_strchr(const char *s, int c)
 	while (s[tally] != '\0')
 	{
 		if (s[tally] == (unsigned char)c)
-		{
 			return ((char *)s + tally);
-		}
 		tally++;
 	}
 	if (s[tally] == (unsigned char)c)

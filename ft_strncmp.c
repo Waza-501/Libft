@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/07 13:01:16 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/05/18 13:41:43 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/22 14:26:30 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	while (n > 0 && (*s1 || *s2))
 	{
 		if (*s1 != *s2)
-		{
 			return (*(unsigned char *)s1 - *(unsigned char *)s2);
-		}
 		s1++;
 		s2++;
 		n--;

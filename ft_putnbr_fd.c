@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 14:57:39 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/06/28 15:23:46 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/22 14:12:38 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,9 @@ static int	is_negative(int n, int fd)
 
 static void	calculator(int n, int len, int fd)
 {
-	int		i;
 	int		divide;
 	int		check_negative;
 
-	i = 0;
 	divide = 1;
 	check_negative = is_negative(n, fd);
 	while ((len -1) > 0)
