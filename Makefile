@@ -6,7 +6,7 @@
 #    By: ohearn <ohearn@student.42.fr>                +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/11 20:08:26 by ohearn        #+#    #+#                  #
-#    Updated: 2022/07/20 19:12:33 by ohearn        ########   odam.nl          #
+#    Updated: 2022/07/22 18:07:42 by ohearn        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,6 +64,7 @@ OBJS	=	$(SRCS:%.c=%.o)
 BONUS	=	$(BONUS_SRCS:%.c=%.o)
 
 all:		$(NAME)
+			$(info Done!)
 
 $(NAME):	$(OBJS)
 				$(AR) $(NAME) $(OBJS)
@@ -72,11 +73,12 @@ $(OBJS):	$(SRCS)
 
 bonus:		$(OBJS) $(BONUS)
 				$(AR) $(NAME) $(BONUS)
+			$(info Done!)
 
 clean:
 			@rm -rf $(OBJS)
 			@rm -rf $(BONUS)
-			$(info Done!)
+			$(info Expunging filth!)
 
 fclean:		clean
 			@rm -rf $(NAME)

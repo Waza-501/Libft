@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/06 15:24:33 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/22 14:25:20 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/22 17:59:16 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ char	*ft_strchr(const char *s, int c)
 	}
 	if (s[tally] == (unsigned char)c)
 		return ((char *)s + tally);
-	else
-		return (0);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/25 16:03:22 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/06/28 15:34:01 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/22 17:58:28 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,5 @@ int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
-	else
-		return (0);
+	return (0);
 }

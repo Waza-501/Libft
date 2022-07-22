@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 17:36:18 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/22 15:05:12 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/22 18:04:32 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list		*temp;
 	t_list		*temp2;
 
+	if (!lst)
+		return ;
 	temp = *lst;
 	while (temp)
 	{
