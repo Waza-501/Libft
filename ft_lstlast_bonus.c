@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/30 18:24:03 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/01 18:33:43 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/22 14:47:00 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
-		return (0);
+		return (NULL);
 	while (lst->next != NULL)
 		lst = lst->next;
 	return (lst);

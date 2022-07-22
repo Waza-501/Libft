@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/30 17:41:11 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/06/30 18:03:17 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/22 14:47:12 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_lstsize(t_list *lst)
 	int		i;
 
 	if (!lst)
-		return (0);
+		return (NULL);
 	i = 1;
 	while (lst->next != NULL)
 	{
