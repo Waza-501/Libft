@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/09 14:20:12 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/22 17:55:57 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/22 23:25:49 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,21 +91,3 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (strings);
 }
-
-//  int main(void)
-// {
-//     char **to_split;
-
-//     to_split = ft_split("This is a string hahahahaha a a a a ", ' ');
-//     if (to_split)
-// 	{
-//         printf("Hello\n");
-//     	while (*to_split)
-//     	{
-//         	printf("%s\n",*to_split);
-//         	to_split++;
-// 		}
-// 	}
-//     system("leaks -quiet a.out");
-//     exit(EXIT_SUCCESS);
-// } 

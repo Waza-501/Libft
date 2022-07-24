@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/06 18:54:11 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/22 15:06:42 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/24 17:01:06 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	int	tally;
+	char conversion;
 
 	tally = ft_strlen(s);
-	if (!ft_isascii(c))
+	conversion = (unsigned char)c;
+	if (!ft_isascii(conversion))
 		return (NULL);
-	while (s[tally] != c && tally != 0)
+	while (s[tally] != conversion && tally != 0)
 		tally--;
-	if (s[tally] == c)
+	if (s[tally] == conversion)
 		return ((char *)s + tally);
 	return (0);
 }
