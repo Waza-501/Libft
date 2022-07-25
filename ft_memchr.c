@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/21 13:09:52 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/05/18 13:40:56 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/25 19:04:09 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		}
 		tally++;
 	}
-	return (0);
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/09 14:20:12 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/22 23:25:49 by owen          ########   odam.nl         */
+/*   Updated: 2022/07/25 19:18:05 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ char	**ft_split(char const *s, char c)
 {
 	char	**strings;
 	int		wordcount;
-	int		zakkari;
+	int		zach;
 
 	if (!s)
 		return (NULL);
@@ -86,8 +86,8 @@ char	**ft_split(char const *s, char c)
 	if (!strings)
 		return (NULL);
 	strings[wordcount] = 0;
-	zakkari = splitter(strings, s, c, wordcount);
-	if (zakkari != 0)
+	zach = splitter(strings, s, c, wordcount);
+	if (zach != 0)
 		return (NULL);
 	return (strings);
 }

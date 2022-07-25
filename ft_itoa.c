@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/09 14:20:44 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/22 15:04:50 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/25 18:59:49 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	is_negative(int n, int i, char *ret)
 	return (check_negative);
 }
 
-static void	calculator(char *ret, int n, int len)
+static void	calculator(char *ret, int n, int length)
 {
 	int		i;
 	int		divide;
@@ -37,10 +37,10 @@ static void	calculator(char *ret, int n, int len)
 	check_negative = is_negative(n, i, ret);
 	if (check_negative == -1)
 		i++;
-	while ((len -1) > 0)
+	while ((length -1) > 0)
 	{
 		divide *= 10;
-		len--;
+		length--;
 	}
 	while (divide >= 1)
 	{
@@ -54,26 +54,26 @@ static void	calculator(char *ret, int n, int len)
 
 char	*ft_itoa(int n)
 {
-	int		len;
+	int		length;
 	int		negative;
 	int		n_copy;
 	char	*ret;
 
-	len = 0;
+	length = 0;
 	n_copy = n;
 	negative = 0;
 	while (n_copy != 0)
 	{
-		len++;
+		length++;
 		n_copy /= 10;
 	}
 	if (n == 0)
-		len++;
+		length++;
 	if (n < 0)
 		negative = 1;
-	ret = (char *)malloc(sizeof(char) * (len + 1 + negative));
+	ret = (char *)malloc(sizeof(char) * (length + 1 + negative));
 	if (!ret)
 		return (NULL);
-	calculator(ret, n, len);
+	calculator(ret, n, length);
 	return (ret);
 }

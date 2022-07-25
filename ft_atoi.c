@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/17 17:45:42 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/22 14:08:31 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/25 18:56:54 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 int	ft_atoi(const char *str)
 {
-	int	res;
-	int	sign;
+	int	result;
+	int	negative;
 
-	res = 0;
-	sign = 1;
+	result = 0;
+	negative = 1;
 	while (*str == 32 || (*str >= 9 && *str <= 13))
 		str++;
 	if (*str == '-')
-		sign *= -1;
+		negative *= -1;
 	if (*str == '-' || *str == '+')
 		str++;
 	while (*str >= '0' && *str <= '9')
 	{
-		res = res * 10 + *str - '0';
+		result = result * 10 + *str - '0';
 		str++;
 	}
-	return (res * sign);
+	return (result * negative);
 }

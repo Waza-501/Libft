@@ -6,11 +6,9 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/25 16:03:22 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/22 17:58:28 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/25 18:58:14 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isdigit(int c)
 {

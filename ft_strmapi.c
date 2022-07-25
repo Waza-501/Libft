@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/17 12:58:32 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/22 15:06:33 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/25 19:31:25 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,21 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*string;
-	char	*ret;
+	char	*copy_s;
 	int		i;
 
 	if (!s)
 		return (NULL);
-	i = 0;
-	string = (char *)s;
-	while (string[i])
-		i++;
-	ret = (char *)malloc(sizeof(char) * (i + 1));
-	if (!ret)
+	i = ft_strlen(s);
+	copy_s = (char *)malloc(sizeof(char) * (i + 1));
+	if (!copy_s)
 		return (NULL);
-	ret[i] = 0;
+	copy_s[i] = 0;
 	i--;
 	while (i >= 0)
 	{
-		ret[i] = f(i, string[i]);
+		copy_s[i] = f(i, s[i]);
 		i--;
 	}
-	return (ret);
+	return (copy_s);
 }

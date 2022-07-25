@@ -6,11 +6,9 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/11 16:26:45 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/22 17:58:33 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/25 18:58:19 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isprint(int c)
 {

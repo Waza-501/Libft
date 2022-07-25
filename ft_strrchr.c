@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/06 18:54:11 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/24 17:01:06 by owen          ########   odam.nl         */
+/*   Updated: 2022/07/25 18:26:59 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	tally;
-	char conversion;
+	int		tally;
+	char	conversion;
 
 	tally = ft_strlen(s);
 	conversion = (unsigned char)c;
