@@ -6,11 +6,9 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/06 14:54:58 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/22 18:00:22 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/25 20:11:08 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_toupper(int c)
 {
