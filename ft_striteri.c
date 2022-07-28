@@ -6,20 +6,20 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/23 17:52:45 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/25 20:12:31 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/26 20:12:12 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int		i;
+	int		tally;
 
 	if (!s || !f)
 		return ;
-	i = 0;
-	while (s[i])
+	tally = 0;
+	while (s[tally])
 	{
-		f(i, &s[i]);
-		i++;
+		f(tally, &s[tally]);
+		tally++;
 	}
 }

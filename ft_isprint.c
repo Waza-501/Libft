@@ -6,13 +6,13 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/11 16:26:45 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/25 18:58:19 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/26 19:27:18 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if (c >= 32 && c <= 126)
+	if (c >= ' ' && c <= '~')
 		return (1);
 	return (0);
 }

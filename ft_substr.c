@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/20 13:44:55 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/25 20:23:23 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/26 20:20:01 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,26 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*sub;
-	int		i;
+	char	*substring;
+	int		length;
 
-	i = 0;
+	length = 0;
 	if (!s)
 		return (NULL);
 	if (start > ft_strlen(s))
 		return (ft_strdup(""));
 	if (len > ft_strlen(s) - start)
 		return (ft_strdup(s + start));
-	sub = (char *)malloc(len + 1);
-	if (!sub)
+	substring = (char *)malloc(len + 1);
+	if (!substring)
 		return (NULL);
 	while (len > 0 && s && start < (ft_strlen(s) + 1))
 	{
-		sub [i] = s[start];
+		substring [length] = s[start];
 		start++;
-		i++;
+		length++;
 		len--;
 	}
-	sub[i] = 0;
-	return (sub);
+	substring[length] = 0;
+	return (substring);
 }
-
-/*
-**
-** Comments like this are allowed by norminette -Niks
-**
-*/

@@ -6,19 +6,19 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/09 14:20:44 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/25 18:59:49 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/26 20:00:48 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_negative(int n, int i, char *ret)
+static int	is_negative(int n, int i, char *conversion)
 {
 	int		check_negative;
 
 	if (n < 0)
 	{
-		ret[i] = '-';
+		conversion[i] = '-';
 		check_negative = -1;
 	}
 	else
@@ -26,17 +26,17 @@ static int	is_negative(int n, int i, char *ret)
 	return (check_negative);
 }
 
-static void	calculator(char *ret, int n, int length)
+static void	calculator(char *conversion, int n, int length)
 {
-	int		i;
+	int		tally;
 	int		divide;
 	int		check_negative;
 
-	i = 0;
+	tally = 0;
 	divide = 1;
-	check_negative = is_negative(n, i, ret);
+	check_negative = is_negative(n, tally, conversion);
 	if (check_negative == -1)
-		i++;
+		tally++;
 	while ((length -1) > 0)
 	{
 		divide *= 10;
@@ -44,12 +44,12 @@ static void	calculator(char *ret, int n, int length)
 	}
 	while (divide >= 1)
 	{
-		ret[i] = ((n / divide) * check_negative) + '0';
+		conversion[tally] = ((n / divide) * check_negative) + '0';
 		n %= divide;
 		divide /= 10;
-		i++;
+		tally++;
 	}
-	ret[i] = 0;
+	conversion[tally] = 0;
 }	
 
 char	*ft_itoa(int n)
@@ -57,7 +57,7 @@ char	*ft_itoa(int n)
 	int		length;
 	int		negative;
 	int		n_copy;
-	char	*ret;
+	char	*conversion;
 
 	length = 0;
 	n_copy = n;
@@ -71,9 +71,9 @@ char	*ft_itoa(int n)
 		length++;
 	if (n < 0)
 		negative = 1;
-	ret = (char *)malloc(sizeof(char) * (length + 1 + negative));
-	if (!ret)
+	conversion = (char *)malloc(sizeof(char) * (length + 1 + negative));
+	if (!conversion)
 		return (NULL);
-	calculator(ret, n, length);
-	return (ret);
+	calculator(conversion, n, length);
+	return (conversion);
 }

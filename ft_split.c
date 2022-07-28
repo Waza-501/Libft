@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/09 14:20:12 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/25 19:18:05 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/26 20:09:13 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,25 +50,25 @@ static void	free_strings(char **strings)
 static int	splitter(char **strings, char const *s, char c, int wordcount)
 {
 	int		i;
-	int		j;
+	int		tally;
 
-	j = 0;
-	while (j < wordcount)
+	tally = 0;
+	while (tally < wordcount)
 	{
 		i = 0;
 		while (*s && c == *s)
 			s++;
 		while (s[i] && c != s[i])
 			i++;
-		strings[j] = ft_substr(s, 0, i);
-		if (!strings[j])
+		strings[tally] = ft_substr(s, 0, i);
+		if (!strings[tally])
 		{
 			free_strings(strings);
 			strings = NULL;
 			return (-1);
 		}
 		s += i;
-		j++;
+		tally++;
 	}
 	return (0);
 }

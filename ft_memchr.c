@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/21 13:09:52 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/25 19:04:09 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/07/26 20:06:22 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (tally < n)
 	{
 		if (copy_s[tally] == (unsigned char)c)
-		{
 			return (copy_s + tally);
-		}
 		tally++;
 	}
 	return (NULL);
