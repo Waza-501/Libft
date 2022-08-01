@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_calloc.c                                        :+:    :+:            */
+/*   main_calloc.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/05/18 13:39:11 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/08/01 13:37:05 by ohearn        ########   odam.nl         */
+/*   Created: 2022/08/01 13:00:10 by ohearn        #+#    #+#                 */
+/*   Updated: 2022/08/01 13:35:33 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
+#include <stdio.h>
 
-void	*ft_calloc(size_t count, size_t size)
+int main()
 {
-	char	*pointer;
-	size_t	safeguard;
-
-	if (count != 0 && size != 0)
-	{
-		safeguard = count * size;
-		if (count != safeguard / size)
-			return (NULL);
-	}
-	pointer = (char *)malloc(count * size);
-	if (!pointer)
-		return (0);
-	ft_bzero(pointer, count * size);
-	return (pointer);
+	printf("Test start\n");
+	ft_calloc(325352, 0);
+	printf("\n");
+	calloc(325352, 0);
+	printf("Test succesfull!\n");
 }
