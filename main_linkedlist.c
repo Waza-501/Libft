@@ -6,7 +6,7 @@
 /*   By: owen <owen@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/28 19:36:08 by owen          #+#    #+#                 */
-/*   Updated: 2022/08/08 19:12:53 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/08/08 20:07:24 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void *malloctime(void *content)
 
 void ft_del(void *content)
 {
+	if (!content)
+		return ;
 	free(content);
 }
 
@@ -60,7 +62,7 @@ int main()
 		temp = temp->next;
 	}
 	printf("\n");
-	ft_lstdelone(second, ft_del);
+	ft_lstdelone(last, ft_del);
 	temp = list_start;
 	while (temp != NULL)
 	{
@@ -75,4 +77,5 @@ int main()
 		printf("%s\n",temp->content);
 		temp = temp->next;
 	}
+	system("leaks -q a.out");
 }
