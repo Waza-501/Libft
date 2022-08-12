@@ -6,7 +6,7 @@
 #    By: ohearn <ohearn@student.42.fr>                +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/11 20:08:26 by ohearn        #+#    #+#                  #
-#    Updated: 2022/08/10 16:54:44 by ohearn        ########   odam.nl          #
+#    Updated: 2022/08/12 16:46:28 by ohearn        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,15 +73,18 @@ $(OBJS):	$(SRCS)
 
 bonus:		$(OBJS) $(BONUS)
 				$(AR) $(NAME) $(BONUS)
-			$(info Finished compiling all libft functions!)
+			$(info Finished compiling libft functions + list functions!)
 
 clean:
 			@rm -rf $(OBJS)
 			@rm -rf $(BONUS)
-			$(info Done!)
+			@echo ""
+			@echo Removed object files libft functions.
 
 fclean:		clean
 			@rm -rf $(NAME)
+			@echo ""
+			@echo Removed all made libft functions.
 
 re:	fclean all
 
