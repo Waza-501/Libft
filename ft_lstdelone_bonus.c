@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/05 17:56:35 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/08/08 19:09:57 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/08/12 16:38:46 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	t_list	*temp;
 
-	if (!lst)
+	if (!lst || !del)
 		return ;
 	temp = lst;
 	del(lst->content);

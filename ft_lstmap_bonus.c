@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/20 15:20:36 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/22 15:05:22 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/08/12 16:39:17 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstmap(t_list *lst, void *(f)(void *), void (*del)(void *))
 	t_list		*new_list;
 	t_list		*ret;
 
-	if (!lst)
+	if (!lst || !f || !del)
 		return (NULL);
 	new_list = ft_lstnew(f(lst->content));
 	if (!new_list)

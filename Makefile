@@ -6,7 +6,7 @@
 #    By: ohearn <ohearn@student.42.fr>                +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/11 20:08:26 by ohearn        #+#    #+#                  #
-#    Updated: 2022/07/26 19:46:57 by owen          ########   odam.nl          #
+#    Updated: 2022/08/10 16:54:44 by ohearn        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,7 @@ OBJS	=	$(SRCS:%.c=%.o)
 BONUS	=	$(BONUS_SRCS:%.c=%.o)
 
 all:		$(NAME)
-			$(info Finished compiling mandatory functions!)
+			$(info Finished compiling libft functions!)
 
 $(NAME):	$(OBJS)
 				$(AR) $(NAME) $(OBJS)
@@ -73,7 +73,7 @@ $(OBJS):	$(SRCS)
 
 bonus:		$(OBJS) $(BONUS)
 				$(AR) $(NAME) $(BONUS)
-			$(info Finished compiling mandatory and bonus funtions!)
+			$(info Finished compiling all libft functions!)
 
 clean:
 			@rm -rf $(OBJS)
