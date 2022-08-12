@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/09 17:56:45 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/25 19:07:26 by ohearn        ########   odam.nl         */
+/*   Updated: 2022/08/12 16:48:40 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	tally = 0;
 	copy_src = (unsigned char *)src;
 	copy_dst = (unsigned char *)dst;
-	if (!dst && !src)
+	if (!dst || !src)
 		return (NULL);
 	while (tally < n)
 	{

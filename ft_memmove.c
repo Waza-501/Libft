@@ -6,7 +6,7 @@
 /*   By: ohearn <ohearn@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/10 13:44:54 by ohearn        #+#    #+#                 */
-/*   Updated: 2022/07/26 20:07:07 by owen          ########   odam.nl         */
+/*   Updated: 2022/08/12 16:48:34 by ohearn        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	tally = 0;
 	copy_dst = (unsigned char *)dst;
 	copy_src = (unsigned char *)src;
-	if (!dst && !src)
+	if (!dst || !src)
 		return (NULL);
 	if (copy_dst > copy_src)
 		reverse_order(dst, src, len);
