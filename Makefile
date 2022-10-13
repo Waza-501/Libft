@@ -6,7 +6,7 @@
 #    By: ohearn <ohearn@student.42.fr>                +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/11 20:08:26 by ohearn        #+#    #+#                  #
-#    Updated: 2022/08/12 16:46:28 by ohearn        ########   odam.nl          #
+#    Updated: 2022/08/12 18:44:12 by ohearn        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ BONUS_SRCS	=	ft_lstnew_bonus.c\
 				
 
 NAME	=	libft.a
-CC		=	@gcc
+CC		=	gcc
 CFLAGS	=	-Wall -Werror -Wextra -c
 AR		=	@ar rcs
 OBJS	=	$(SRCS:%.c=%.o)
@@ -70,6 +70,8 @@ $(NAME):	$(OBJS)
 				$(AR) $(NAME) $(OBJS)
 $(OBJS):	$(SRCS)
 				$(CC) $(CFLAGS) $(SRCS)
+$(BONUS):	$(BONUS_SRCS)
+				$(CC) $(CFLAGS) $(BONUS_SRCS)
 
 bonus:		$(OBJS) $(BONUS)
 				$(AR) $(NAME) $(BONUS)
