@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: owhearn <owhearn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 11:00:05 by owhearn           #+#    #+#             */
-/*   Updated: 2024/10/07 13:46:32 by owhearn          ###   ########.fr       */
+/*   Created: 2024/10/07 13:04:22 by owhearn           #+#    #+#             */
+/*   Updated: 2024/10/07 13:08:01 by owhearn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
+void	*ft_bzero(void *s, size_t n)
+{
+	char	*temp;
+	size_t	tally;
 
-void	*ft_bzero(void *s, size_t n);
-int		ft_isalnum(int c);
-int		ft_isalpha(int c);
-int		ft_isascii(int c);
-int		ft_isdigit(int c);
-int		ft_isprint(int c);
-char	*ft_strchr(const char *s, int c);
-size_t	ft_strlen(char *s);
-char	*ft_strrchr(const char *s, int c);
-int		ft_tolower(int c);
-int		ft_toupper(int c);
-
-#endif
+	temp = (char *)s;
+	tally = 0;
+	while (tally < n)
+	{
+		temp[tally] = '\0';
+		tally++;
+	}
+	return (NULL);
+}

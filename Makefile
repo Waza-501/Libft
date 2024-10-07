@@ -5,7 +5,9 @@ Files				=	ft_bzero.c\
 						ft_isascii.c\
 						ft_isdigit.c\
 						ft_isprint.c\
+						ft_strchr.c\
 						ft_strlen.c\
+						ft_strrchr.c\
 						ft_tolower.c\
 						ft_toupper.c\
 

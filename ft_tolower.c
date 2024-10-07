@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: owhearn <owhearn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 11:00:05 by owhearn           #+#    #+#             */
-/*   Updated: 2024/10/07 13:46:32 by owhearn          ###   ########.fr       */
+/*   Created: 2024/10/07 13:00:37 by owhearn           #+#    #+#             */
+/*   Updated: 2024/10/07 13:01:36 by owhearn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-
-void	*ft_bzero(void *s, size_t n);
-int		ft_isalnum(int c);
-int		ft_isalpha(int c);
-int		ft_isascii(int c);
-int		ft_isdigit(int c);
-int		ft_isprint(int c);
-char	*ft_strchr(const char *s, int c);
-size_t	ft_strlen(char *s);
-char	*ft_strrchr(const char *s, int c);
-int		ft_tolower(int c);
-int		ft_toupper(int c);
-
-#endif
+int	ft_tolower(int c)
+{
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
+}
