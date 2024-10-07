@@ -6,7 +6,7 @@
 /*   By: owhearn <owhearn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 12:26:07 by owhearn           #+#    #+#             */
-/*   Updated: 2024/10/07 12:28:58 by owhearn          ###   ########.fr       */
+/*   Updated: 2024/10/07 15:57:23 by owhearn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(char *s)
 	size_t	tally;
 
 	tally = 0;
-	while (s[tally] && s[tally] != '\0')
+	while (s[tally])
 		tally++;
 	return (tally);
 }
