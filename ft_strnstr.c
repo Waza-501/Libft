@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memcmp.c                                        :+:    :+:            */
+/*   ft_strnstr.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: owhearn <owhearn@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/10/08 09:02:48 by owen          #+#    #+#                 */
-/*   Updated: 2024/10/08 12:30:26 by owhearn       ########   odam.nl         */
+/*   Created: 2024/10/08 12:25:46 by owhearn       #+#    #+#                 */
+/*   Updated: 2024/10/08 12:39:08 by owhearn       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t			tally;
-	unsigned char	*cs1;
-	unsigned char	*cs2;
+	size_t	tally1;
+	size_t	tally2;
 
-	tally = 0;
-	cs1 = (unsigned char *)s1;
-	cs2 = (unsigned char *)s2;
-	if (n == 0)
-		return (0);
-	while (tally < n)
+	tally1 = 0;
+	if (little[tally1])
+		return ((char *)big);
+	while (tally1 < len)
 	{
-		if (cs1[tally] != cs2[tally])
-			return (cs1[tally] - cs2[tally]);
-		tally++;
+		tally2 = 0;
+		while ((big[tally1 + tally2] == little[tally2])
+			&& (tally1 + tally2 < len))
+		{
+			if (little[tally2 + 1] == '\0')
+				return (big[tally1 + tally2]);
+			tally2++;
+		}
+		tally1++;
 	}
-	return (0);
+	return (NULL);
 }

@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memcmp.c                                        :+:    :+:            */
+/*   ft_substr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: owhearn <owhearn@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/10/08 09:02:48 by owen          #+#    #+#                 */
-/*   Updated: 2024/10/08 12:30:26 by owhearn       ########   odam.nl         */
+/*   Created: 2024/10/08 14:36:30 by owhearn       #+#    #+#                 */
+/*   Updated: 2024/10/08 14:52:31 by owhearn       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t			tally;
-	unsigned char	*cs1;
-	unsigned char	*cs2;
+	size_t	size;
+	char	*new;
 
-	tally = 0;
-	cs1 = (unsigned char *)s1;
-	cs2 = (unsigned char *)s2;
-	if (n == 0)
-		return (0);
-	while (tally < n)
+	if (!s)
+		return (NULL);
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	if (len > ft_strlen(s) - start)
+		return (ft_strdup(s + start));
+	new = (char *)malloc(len + 1);
+	if (!new)
+		return (NULL);
+	while (len > 0)
 	{
-		if (cs1[tally] != cs2[tally])
-			return (cs1[tally] - cs2[tally]);
-		tally++;
+		new[size] = s[start];
+		size++;
+		start++;
+		len--;
 	}
-	return (0);
+	new[size] = '\0';
+	return (new);
 }

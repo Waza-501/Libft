@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memcmp.c                                        :+:    :+:            */
+/*   ft_strjoin.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: owhearn <owhearn@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/10/08 09:02:48 by owen          #+#    #+#                 */
-/*   Updated: 2024/10/08 12:30:26 by owhearn       ########   odam.nl         */
+/*   Created: 2024/10/08 14:53:47 by owhearn       #+#    #+#                 */
+/*   Updated: 2024/10/08 16:10:31 by owhearn       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t			tally;
-	unsigned char	*cs1;
-	unsigned char	*cs2;
+	size_t	size;
+	char	*combine;
 
-	tally = 0;
-	cs1 = (unsigned char *)s1;
-	cs2 = (unsigned char *)s2;
-	if (n == 0)
-		return (0);
-	while (tally < n)
+	if (!s1 || !s2)
+		return (NULL);
+	size = 0;
+	combine = (char *)malloc(size +1);
+	if (!combine)
+		return (NULL);
+	while (*s1)
 	{
-		if (cs1[tally] != cs2[tally])
-			return (cs1[tally] - cs2[tally]);
-		tally++;
+		combine[size] = *s1;
+		s1++;
+		size++;
 	}
-	return (0);
+	while (*s2)
+	{
+		combine[size] = *s2;
+		s2++;
+		size++;
+	}
+	combine[size] = '\0';
+	return (combine);
 }
