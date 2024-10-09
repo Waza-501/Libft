@@ -6,13 +6,14 @@
 /*   By: owhearn <owhearn@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/10/07 12:52:09 by owhearn       #+#    #+#                 */
-/*   Updated: 2024/10/09 12:44:35 by owen          ########   odam.nl         */
+/*   Updated: 2024/10/09 18:05:44 by owhearn       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 #include <string.h>
+#include <limits.h>
 
 void	test_memmove(void)
 {
@@ -69,16 +70,21 @@ void	test_split(void)
 	}
 }
 
+void	test_itoa(void)
+{
+	int		temp;
+
+	temp = 42;	
+	printf("test 1.\nNumber %i\nString %s\n\n", temp, ft_itoa(temp));
+	printf("test 2.\nNumber %i\nString %s\n\n", INT_MAX, ft_itoa(INT_MAX));
+	printf("test 3.\nNumber %i\nString %s\n\n", INT_MIN, ft_itoa(INT_MIN));
+}
+
 int	main(int argc, char **argv)
 {
 	int	i;
 
 	i = 1;
-	// if (argc > 2)
-	// {
-	// 	printf("One at a time please\n");
-	// 	return (0);
-	// }
 	while (argv[i])
 	{
 		if (strcmp(argv[1], "strlen") == 0)
@@ -89,6 +95,9 @@ int	main(int argc, char **argv)
 			test_memmove();
 		else if (strcmp(argv[1], "split") == 0)
 			test_split();
+		else if (strcmp(argv[i], "itoa") == 0)
+			test_itoa();
+		i++;
 	}
 	printf("\n\ntesting done\n\n");
 	return (0);
