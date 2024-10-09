@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: owhearn <owhearn@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 12:52:09 by owhearn           #+#    #+#             */
-/*   Updated: 2024/10/07 15:17:52 by owhearn          ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   main.c                                             :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: owhearn <owhearn@student.42.fr>              +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/10/07 12:52:09 by owhearn       #+#    #+#                 */
+/*   Updated: 2024/10/09 12:44:35 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,21 +49,47 @@ void	test_strlen(void)
 	printf("The original strlen says it's %zu\n", strlen(string));
 }
 
+void	test_split(void)
+{
+	char	**test1;
+	char	**test2;
+
+	test1 = ft_split("this is a test", ' ');
+	test2 = ft_split("this	one		has			tabs :D", '	');
+	while (test1 != NULL && *test1)
+	{
+		printf("%s\n", *test1);
+		test1++;
+	}
+	printf("\n\n");
+	while (test2 != NULL && *test2)
+	{
+		printf("%s\n", *test2);
+		test2++;
+	}
+}
+
 int	main(int argc, char **argv)
 {
-	if (argc > 2)
+	int	i;
+
+	i = 1;
+	// if (argc > 2)
+	// {
+	// 	printf("One at a time please\n");
+	// 	return (0);
+	// }
+	while (argv[i])
 	{
-		printf("One at a time please\n");
-		return (0);
+		if (strcmp(argv[1], "strlen") == 0)
+			test_strlen();
+		else if (strcmp(argv[1], "bzero") == 0)
+			test_bzero();
+		else if (strcmp(argv[1], "memmove") == 0)
+			test_memmove();
+		else if (strcmp(argv[1], "split") == 0)
+			test_split();
 	}
-	printf("temp\n");
-	printf("Arguments are %s, %s\n", argv[0], argv[1]);
-	if (strcmp(argv[1], "strlen") == 0)
-		test_strlen();
-	if (strcmp(argv[1], "bzero") == 0)
-		test_bzero();
-	else if (strcmp(argv[1], "memmove") == 0)
-		test_memmove();
 	printf("\n\ntesting done\n\n");
 	return (0);
 }
