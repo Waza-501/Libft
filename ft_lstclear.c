@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memchr.c                                        :+:    :+:            */
+/*   ft_lstclear.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: owen <owen@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/10/08 08:49:54 by owen          #+#    #+#                 */
-/*   Updated: 2024/10/11 18:16:44 by owen          ########   odam.nl         */
+/*   Created: 2024/10/11 13:43:18 by owen          #+#    #+#                 */
+/*   Updated: 2024/10/11 19:18:23 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	size_t			tally;
-	unsigned char	*ret;
+	t_list	*temp;
 
-	tally = 0;
-	ret = (unsigned char *)s;
-	while (tally < n)
+	if (!lst)
+		return ;
+	if (del)
 	{
-		if (ret[tally] == (unsigned char)c)
-			return (ret + tally);
-		tally++;
+		while (*lst)
+		{
+			temp = (*lst)->next;
+			del((*lst)->content);
+			free(*lst);
+			*(lst) = temp;
+		}
 	}
-	return (NULL);
+	*lst = NULL;
 }

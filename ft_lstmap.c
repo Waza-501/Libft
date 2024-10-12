@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memchr.c                                        :+:    :+:            */
+/*   ft_lstmap.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: owen <owen@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/10/08 08:49:54 by owen          #+#    #+#                 */
-/*   Updated: 2024/10/11 18:16:44 by owen          ########   odam.nl         */
+/*   Created: 2024/10/11 14:04:00 by owen          #+#    #+#                 */
+/*   Updated: 2024/10/11 19:31:15 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t			tally;
-	unsigned char	*ret;
+	t_list	*new;
+	t_list	*temp;
 
-	tally = 0;
-	ret = (unsigned char *)s;
-	while (tally < n)
+	if (!lst || !f)
+		return (NULL);
+	new = NULL;
+	while (lst)
 	{
-		if (ret[tally] == (unsigned char)c)
-			return (ret + tally);
-		tally++;
+		temp = ft_lstnew(f(lst->content));
+		if (!temp)
+		{
+			ft_lstclear(&new, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new, temp);
+		lst = lst->next;
 	}
-	return (NULL);
+	return (new);
 }

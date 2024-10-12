@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memchr.c                                        :+:    :+:            */
+/*   ft_putchar_fd.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: owen <owen@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/10/08 08:49:54 by owen          #+#    #+#                 */
-/*   Updated: 2024/10/11 18:16:44 by owen          ########   odam.nl         */
+/*   Created: 2024/10/11 12:01:23 by owen          #+#    #+#                 */
+/*   Updated: 2024/10/11 12:06:46 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t			tally;
-	unsigned char	*ret;
-
-	tally = 0;
-	ret = (unsigned char *)s;
-	while (tally < n)
-	{
-		if (ret[tally] == (unsigned char)c)
-			return (ret + tally);
-		tally++;
-	}
-	return (NULL);
+	write(fd, &c, 1);
 }

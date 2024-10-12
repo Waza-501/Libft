@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memchr.c                                        :+:    :+:            */
+/*   ft_lstadd_front.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: owen <owen@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/10/08 08:49:54 by owen          #+#    #+#                 */
-/*   Updated: 2024/10/11 18:16:44 by owen          ########   odam.nl         */
+/*   Created: 2024/10/11 13:22:08 by owen          #+#    #+#                 */
+/*   Updated: 2024/10/11 19:03:42 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	size_t			tally;
-	unsigned char	*ret;
-
-	tally = 0;
-	ret = (unsigned char *)s;
-	while (tally < n)
-	{
-		if (ret[tally] == (unsigned char)c)
-			return (ret + tally);
-		tally++;
-	}
-	return (NULL);
+	if (!lst || !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }

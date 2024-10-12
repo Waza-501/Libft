@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memchr.c                                        :+:    :+:            */
+/*   ft_strmapi.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: owen <owen@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/10/08 08:49:54 by owen          #+#    #+#                 */
-/*   Updated: 2024/10/11 18:16:44 by owen          ########   odam.nl         */
+/*   Created: 2024/10/11 11:36:54 by owen          #+#    #+#                 */
+/*   Updated: 2024/10/11 18:49:37 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t			tally;
-	unsigned char	*ret;
+	char	*ret;
+	int		idx;
 
-	tally = 0;
-	ret = (unsigned char *)s;
-	while (tally < n)
+	if (!s)
+		return (NULL);
+	idx = ft_strlen(s);
+	ret = (char *)malloc(sizeof(char) * (idx + 1));
+	if (!ret)
+		return (NULL);
+	ret[idx] = '\0';
+	idx--;
+	while (idx >= 0)
 	{
-		if (ret[tally] == (unsigned char)c)
-			return (ret + tally);
-		tally++;
+		ret[idx] = (f(idx, s[idx]));
+		idx--;
 	}
-	return (NULL);
+	return (ret);
 }
+	

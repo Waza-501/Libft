@@ -6,7 +6,7 @@
 /*   By: owhearn <owhearn@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/10/08 14:53:47 by owhearn       #+#    #+#                 */
-/*   Updated: 2024/10/08 16:10:31 by owhearn       ########   odam.nl         */
+/*   Updated: 2024/10/11 19:01:04 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!s1 || !s2)
 		return (NULL);
 	size = 0;
-	combine = (char *)malloc(size +1);
+	combine = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) +1);
 	if (!combine)
 		return (NULL);
 	while (*s1)

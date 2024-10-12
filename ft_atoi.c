@@ -6,7 +6,7 @@
 /*   By: owhearn <owhearn@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/10/08 12:44:37 by owhearn       #+#    #+#                 */
-/*   Updated: 2024/10/08 13:59:41 by owhearn       ########   odam.nl         */
+/*   Updated: 2024/10/11 18:09:43 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ int	ft_atoi(const char *ptr)
 	negative = 1;
 	while (*ptr == ' ' || (*ptr >= 9 && *ptr <= 13))
 		ptr++;
-	if (*ptr == '-')
-		negative *= -1;
-	while (*ptr == '-' || *ptr == '+')
+	if (*ptr == '-' || *ptr == '+')
+	{
+		if (*ptr == '-')
+			negative *= -1;
 		ptr++;
+	}
 	while (*ptr >= '0' && *ptr <= '9')
 	{
 		ret = ret * 10 + *ptr - '0';

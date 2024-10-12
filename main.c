@@ -6,7 +6,7 @@
 /*   By: owhearn <owhearn@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/10/07 12:52:09 by owhearn       #+#    #+#                 */
-/*   Updated: 2024/10/09 18:05:44 by owhearn       ########   odam.nl         */
+/*   Updated: 2024/10/11 20:31:34 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,26 @@
 #include <stdio.h>
 #include <string.h>
 #include <limits.h>
+
+static void	*memstuff(char *s)
+{
+	char	*new;
+
+	new = (char *)malloc(sizeof(char) * strlen(s) + 1);
+	if (!new)
+	{
+		printf("memstuff error.\n");
+		return (NULL);
+	}
+	ft_strlcpy(new, s, sizeof(s));
+	return (new);
+}
+
+static void	ft_del(void *content)
+{
+	if (content)
+		free(content);
+}
 
 void	test_memmove(void)
 {
@@ -50,6 +70,27 @@ void	test_strlen(void)
 	printf("The original strlen says it's %zu\n", strlen(string));
 }
 
+void	test_atoi(void)
+{
+	char	*test;
+
+	test = "+-42";
+	printf("String is %s result is %i\n", test, ft_atoi(test));
+	printf("String is %s result is %i\n", test, atoi(test));
+}
+
+void	test_strchr(void)
+{
+	char	*test;
+	char	*result42;
+	char	*result;
+
+	test = "testing";
+	result42 = ft_strchr(test, 'W');
+	result = strchr(test, 'W');
+	printf ("Results:\nlibft-%s\nBase-%s\n", result42, result);
+}
+
 void	test_split(void)
 {
 	char	**test1;
@@ -72,12 +113,62 @@ void	test_split(void)
 
 void	test_itoa(void)
 {
-	int		temp;
+	int		test;
+	int		test2;
 
-	temp = 42;	
-	printf("test 1.\nNumber %i\nString %s\n\n", temp, ft_itoa(temp));
+	test = 42;
+	test2 = -42;
+	printf("test 1.\nNumber %i\nString %s\n\n", test, ft_itoa(test));
+	printf("test 1.\nNumber %i\nString %s\n\n", test2, ft_itoa(test2));
 	printf("test 2.\nNumber %i\nString %s\n\n", INT_MAX, ft_itoa(INT_MAX));
 	printf("test 3.\nNumber %i\nString %s\n\n", INT_MIN, ft_itoa(INT_MIN));
+}
+
+void	test_bonus(void)
+{
+	t_list	*n1;
+	t_list	*n2;
+	t_list	*n3;
+	t_list	*n4;
+	t_list	*temp;
+	t_list	*head;
+	t_list	**wipe;
+
+	n1 = ft_lstnew(memstuff("Node 1"));
+	n2 = ft_lstnew(memstuff("Node 2"));
+	n3 = ft_lstnew(memstuff("Node 3"));
+	n4 = ft_lstnew(memstuff("Node 4"));
+	ft_lstadd_back(&n1, n2);
+	head = n1;
+	ft_lstadd_front(&head, n4);
+	temp = head;
+	while (temp != NULL)
+	{
+		printf("List contains -%s-\n", temp->content);
+		temp = temp->next;
+	}
+	printf("______________________\n");
+	ft_lstadd_back(&head, n3);
+	ft_lstdelone(n2, ft_del);
+	n1->next = n3;
+	temp = head;
+	while (temp != NULL)
+	{
+		if (temp->content != NULL)
+			printf("List contains -%s-\n", temp->content);
+		temp = temp->next;
+	}
+	printf("______________________\n");
+	wipe = &head;
+	ft_lstclear(wipe, ft_del);
+	temp = head;
+	printf("List is wiped\n");
+	while (temp != NULL)
+	{
+		printf("List contains -%s-\n", temp->content);
+		temp = temp->next;
+	}
+	printf("______________________\n");
 }
 
 int	main(int argc, char **argv)
@@ -89,16 +180,23 @@ int	main(int argc, char **argv)
 	{
 		if (strcmp(argv[1], "strlen") == 0)
 			test_strlen();
+		else if (strcmp(argv[i], "atoi") == 0)
+			test_atoi();
 		else if (strcmp(argv[1], "bzero") == 0)
 			test_bzero();
+		else if (strcmp(argv[i], "strchr") == 0)
+			test_strchr();
 		else if (strcmp(argv[1], "memmove") == 0)
 			test_memmove();
 		else if (strcmp(argv[1], "split") == 0)
 			test_split();
 		else if (strcmp(argv[i], "itoa") == 0)
 			test_itoa();
+		else if (strcmp(argv[i], "bonus") == 0)
+			test_bonus();
 		i++;
 	}
 	printf("\n\ntesting done\n\n");
+	system("leaks -q a.out");
 	return (0);
 }

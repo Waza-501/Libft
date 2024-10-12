@@ -6,71 +6,35 @@
 /*   By: owen <owen@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/10/09 15:02:43 by owen          #+#    #+#                 */
-/*   Updated: 2024/10/09 18:05:18 by owhearn       ########   odam.nl         */
+/*   Updated: 2024/10/11 17:58:14 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-size_t	findsize(int n)
+int	check_negative(int negative, int idx, char *ret)
 {
-	size_t	size;
+	int	confirm;
 
-	size = 0;
-	if (n < 0)
+	confirm = 1;
+	if (negative != 0)
 	{
-		n *= -1;
-		size++;
+		ret[idx] = '-';
+		confirm = -1;
 	}
-	while (n > 0)
-	{
-		n /= 10;
-		size++;
-	}
-	return (size);
+	return (confirm);
 }
 
-char	*ft_itoa(int n)
-{
-	char	*ret;
-	size_t	size;
-
-	size = findsize(n);
-	printf("%i\n%zu\n", n, size);
-	if (n == 0)
-		return (ft_strdup("0"));
-	ret = (char *)malloc(sizeof(char *) * size + 1);
-	if (!ret)
-		return (NULL);
-	ret[size] = '\0';
-	size--;
-	if (n < 0)
-	{
-		ret[0] = '-';
-		size--;
-	}
-	while (n > 0)
-	{
-		ret[size] = 48 + (n % 10);
-		n /= 10;
-		size--;
-	}
-	return (ret);
-}
-
-/*void	*conversion(char *ret, int n, size_t size, int negative)
+void	conversion(char *ret, int n, size_t size, int negative)
 {
 	int	idx;
+	int	neg;
 	int	div;
 
 	idx = 0;
 	div = 1;
-	if (negative != 0)
-	{
-		ret[idx] = '-';
+	if ((neg = check_negative(negative, idx, ret)) == -1)
 		idx++;
-	}
 	while ((size - 1) > 0)
 	{
 		div *= 10;
@@ -78,8 +42,12 @@ char	*ft_itoa(int n)
 	}
 	while (div >= 1)
 	{
-		ret[idx] = ((n / div) )
+		ret[idx] = ((n / div) * neg) + '0';
+		n %= div;
+		div /= 10;
+		idx++;
 	}
+	ret[idx] = '\0';
 }
 
 char	*ft_itoa(int n)
@@ -101,9 +69,9 @@ char	*ft_itoa(int n)
 		size++;
 	if (n < 0)
 		negative = 1;
-	ret = (char *)malloc(sizeof(char *) * (size + 1 + negative));
+	ret = (char *)malloc(sizeof(char) * (size + 1 + negative));
 	if (!ret)
 		return (NULL);
 	conversion(ret, n, size, negative);
 	return (ret);
-}*/
+}
