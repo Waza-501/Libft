@@ -6,7 +6,7 @@
 /*   By: owen <owen@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/10/11 13:29:14 by owen          #+#    #+#                 */
-/*   Updated: 2024/10/11 14:38:45 by owen          ########   odam.nl         */
+/*   Updated: 2024/10/14 17:23:46 by owhearn       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!lst || !new)
+	if (!lst && !new)
 		return ;
 	if (!*lst)
 		*lst = new;

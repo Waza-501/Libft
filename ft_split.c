@@ -6,12 +6,11 @@
 /*   By: owen <owen@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/10/08 17:18:26 by owen          #+#    #+#                 */
-/*   Updated: 2024/10/09 12:42:48 by owen          ########   odam.nl         */
+/*   Updated: 2024/10/14 18:02:33 by owhearn       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	count_words(const char *s, char c)
 {
