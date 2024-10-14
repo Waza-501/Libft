@@ -6,7 +6,7 @@
 /*   By: owhearn <owhearn@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/10/07 11:00:05 by owhearn       #+#    #+#                 */
-/*   Updated: 2024/10/11 18:42:06 by owen          ########   odam.nl         */
+/*   Updated: 2024/10/14 11:30:58 by owhearn       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-	
 }					t_list;
-
 
 int		ft_atoi(const char *ptr);
 void	*ft_bzero(void *s, size_t n);

@@ -6,7 +6,7 @@
 /*   By: owen <owen@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/10/09 15:02:43 by owen          #+#    #+#                 */
-/*   Updated: 2024/10/11 17:58:14 by owen          ########   odam.nl         */
+/*   Updated: 2024/10/14 11:30:45 by owhearn       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ void	conversion(char *ret, int n, size_t size, int negative)
 
 	idx = 0;
 	div = 1;
-	if ((neg = check_negative(negative, idx, ret)) == -1)
+	neg = check_negative(negative, idx, ret);
+	if (neg == -1)
 		idx++;
 	while ((size - 1) > 0)
 	{
