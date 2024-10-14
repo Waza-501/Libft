@@ -6,7 +6,7 @@
 /*   By: owhearn <owhearn@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/10/07 12:52:09 by owhearn       #+#    #+#                 */
-/*   Updated: 2024/10/11 20:31:34 by owen          ########   odam.nl         */
+/*   Updated: 2024/10/14 16:36:02 by owhearn       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,39 @@ void	test_itoa(void)
 	printf("test 3.\nNumber %i\nString %s\n\n", INT_MIN, ft_itoa(INT_MIN));
 }
 
+void	test_lstmap(void)
+{
+	t_list	*n1;
+	t_list	*n2;
+	t_list	*n3;
+	t_list	*new;
+	t_list	*temp;
+	char *a = strdup("hello");
+	char *b = strdup("hello");
+	char *c = strdup("hello");
+
+	n1 = ft_lstnew(a);
+	n2 = ft_lstnew(b);
+	n3 = ft_lstnew(c);
+	ft_lstadd_back(&n1, n2);
+	ft_lstadd_back(&n1, n3);
+	new = ft_lstmap(n1, &ft_toupper, &free);
+	temp = n1;
+	while (temp != NULL)
+	{
+		printf("List contains -%s-\n", temp->content);
+		temp = temp->next;
+	}
+	ft_lstclear(&n1, &free);
+	temp = new;
+	while (temp != NULL)
+	{
+		printf("List contains -%s-\n", temp->content);
+		temp = temp->next;
+	}
+	ft_lstclear(&new, &free);
+}
+
 void	test_bonus(void)
 {
 	t_list	*n1;
@@ -132,30 +165,39 @@ void	test_bonus(void)
 	t_list	*n4;
 	t_list	*temp;
 	t_list	*head;
+	t_list	*new;
 	t_list	**wipe;
 
 	n1 = ft_lstnew(memstuff("Node 1"));
 	n2 = ft_lstnew(memstuff("Node 2"));
 	n3 = ft_lstnew(memstuff("Node 3"));
-	n4 = ft_lstnew(memstuff("Node 4"));
+	//n4 = ft_lstnew(memstuff("Node 4"));
 	ft_lstadd_back(&n1, n2);
 	head = n1;
-	ft_lstadd_front(&head, n4);
+	//ft_lstadd_front(&head, n4);
 	temp = head;
-	while (temp != NULL)
-	{
-		printf("List contains -%s-\n", temp->content);
-		temp = temp->next;
-	}
-	printf("______________________\n");
+	// while (temp != NULL)
+	// {
+	// 	printf("List contains -%s-\n", temp->content);
+	// 	temp = temp->next;
+	// }
+	// printf("______________________\n");
 	ft_lstadd_back(&head, n3);
-	ft_lstdelone(n2, ft_del);
-	n1->next = n3;
+	//ft_lstdelone(n2, ft_del);
+	//n1->next = n3;
 	temp = head;
 	while (temp != NULL)
 	{
 		if (temp->content != NULL)
 			printf("List contains -%s-\n", temp->content);
+		temp = temp->next;
+	}
+	printf("______________________\n");
+	new = ft_lstmap(head, &ft_strlen, &free);
+	temp = new;
+	while (temp != NULL)
+	{
+		printf("List contains -%zu-\n", temp->content);
 		temp = temp->next;
 	}
 	printf("______________________\n");
@@ -194,6 +236,8 @@ int	main(int argc, char **argv)
 			test_itoa();
 		else if (strcmp(argv[i], "bonus") == 0)
 			test_bonus();
+		else if (strcmp(argv[i], "lstmap") == 0);
+			test_lstmap();
 		i++;
 	}
 	printf("\n\ntesting done\n\n");
