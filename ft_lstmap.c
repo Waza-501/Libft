@@ -6,11 +6,12 @@
 /*   By: owen <owen@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/10/11 14:04:00 by owen          #+#    #+#                 */
-/*   Updated: 2024/10/11 19:31:15 by owen          ########   odam.nl         */
+/*   Updated: 2024/10/14 13:28:28 by owhearn       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
