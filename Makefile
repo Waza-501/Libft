@@ -74,7 +74,8 @@ re:			fclean all
 bonus:	$(Ofiles) $(BOfiles)
 		ar -rc $(OUTN) $(BOfiles)
 
-test:	bonus
-		gcc main.c libft.a
+so:
+		$(Compiler) -fPIC $(Cflags) $(Files)
+		gcc -shared -o libft.so $(Ofiles)
 
-.PHONY:		all, clean, fclean, re, bonus, test
+.PHONY:		all, clean, fclean, re, bonus
