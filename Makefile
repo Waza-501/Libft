@@ -45,7 +45,7 @@ BONUS_SRCS	=	ft_lstnew.c\
 				
 
 NAME	=	libft.a
-CC		=	gcc
+CC		=	cc
 CFLAGS	=	-Wall -Werror -Wextra -c
 AR		=	@ar rcs
 OBJS	=	$(SRCS:%.c=%.o)

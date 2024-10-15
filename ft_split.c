@@ -6,7 +6,7 @@
 /*   By: owen <owen@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/10/08 17:18:26 by owen          #+#    #+#                 */
-/*   Updated: 2024/10/14 18:02:33 by owhearn       ########   odam.nl         */
+/*   Updated: 2024/10/15 17:53:29 by owhearn       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ char	**ft_split(char const *s, char c)
 	ret = (char **)malloc(sizeof(char *) * (count + 1));
 	if (!ret)
 		return (NULL);
-	ret[count] = '\0';
+	ret[count] = NULL;
 	error = fill_words(ret, s, c, count);
 	if (error != 0)
 		return (NULL);
