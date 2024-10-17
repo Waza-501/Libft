@@ -6,7 +6,7 @@
 /*   By: owhearn <owhearn@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/10/07 12:52:09 by owhearn       #+#    #+#                 */
-/*   Updated: 2024/10/15 14:52:47 by owhearn       ########   odam.nl         */
+/*   Updated: 2024/10/17 16:16:14 by owhearn       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,19 @@ static void	*memstuff(char *s)
 	}
 	ft_strlcpy(new, s, sizeof(s));
 	return (new);
+}
+
+static void	free_mem(char **data)
+{
+	int	i;
+
+	i = 0;
+	while (data[i])
+	{
+		free(data[i]);
+		i++;
+	}
+	free(data);
 }
 
 static void	ft_del(void *content)
@@ -95,20 +108,26 @@ void	test_split(void)
 {
 	char	**test1;
 	char	**test2;
+	int		idx1;
+	int		idx2;
 
 	test1 = ft_split("this is a test", ' ');
 	test2 = ft_split("this	one		has			tabs :D", '	');
-	while (test1 != NULL && *test1)
+	idx1 = 0;
+	idx2 = 0;
+	while (test1 != NULL && test1[idx1])
 	{
-		printf("%s\n", *test1);
-		test1++;
+		printf("%s\n", test1[idx1]);
+		idx1++;
 	}
 	printf("\n\n");
-	while (test2 != NULL && *test2)
+	while (test2 != NULL && test2[idx2])
 	{
-		printf("%s\n", *test2);
-		test2++;
+		printf("%s\n", test2[idx2]);
+		idx2++;
 	}
+	free_mem(test1);
+	free_mem(test2);
 }
 
 void	test_itoa(void)
@@ -197,6 +216,5 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	printf("\n\ntesting done\n\n");
-	system("leaks -q a.out");
 	return (0);
 }
