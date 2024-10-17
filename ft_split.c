@@ -6,7 +6,7 @@
 /*   By: owen <owen@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/10/08 17:18:26 by owen          #+#    #+#                 */
-/*   Updated: 2024/10/15 17:53:29 by owhearn       ########   odam.nl         */
+/*   Updated: 2024/10/16 14:02:32 by owen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ int	count_words(const char *s, char c)
 
 void	free_mem(char **data)
 {
-	int	i;
+	int	idx;
 
-	i = 0;
-	while (data[i])
+	idx = 0;
+	while (data[idx])
 	{
-		free(data[i]);
-		i++;
+		free(data[idx]);
+		idx++;
 	}
 	free(data);
 }
