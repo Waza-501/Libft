@@ -63,13 +63,13 @@ $(BONUS):	$(BONUS_SRCS)
 
 bonus:		$(OBJS) $(BONUS)
 				$(AR) $(NAME) $(BONUS)
-			$(info Finished compiling libft functions + list functions!)
+			$(info Finished compiling libft functions + bonus functions!)
 
 clean:
 			@rm -rf $(OBJS)
 			@rm -rf $(BONUS)
 			@echo ""
-			@echo Removed object files libft functions.
+			@echo Removed libft object files.
 
 fclean:		clean
 			@rm -rf $(NAME)
@@ -78,4 +78,4 @@ fclean:		clean
 
 re:	fclean all
 
-.PHONY:		all, clean, fclean, re,
+.PHONY:		all, clean, fclean, re, bonus
