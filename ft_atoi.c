@@ -6,7 +6,7 @@
 /*   By: owhearn <owhearn@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/10/08 12:44:37 by owhearn       #+#    #+#                 */
-/*   Updated: 2024/10/11 18:09:43 by owen          ########   odam.nl         */
+/*   Updated: 2024/10/22 14:42:12 by owhearn       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_atoi(const char *ptr)
 {
-	int		ret;
+	long	ret;
 	int		negative;
 
 	ret = 0;
